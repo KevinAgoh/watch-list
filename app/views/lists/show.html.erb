@@ -1,15 +1,16 @@
 <div class="container">
-  <div class="card-trip">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <div class="card-trip-infos">
-      <div>
-        <h2></h2>
-        <p></p>
+  <%= @list.movies.each do |movie| %>
+    <div class="card-movie m-3">
+      <%= image_tag movie.poster_url %>
+      <div class="card-movie-infos">
+        <div>
+          <h2><%= movie.title %></h2>
+          <p><%= movie.overview %></p>
+        </div>
+        <h2 class="card-movie-pricing"><%= movie.rating %></h2>
       </div>
-      <h2 class="card-trip-pricing"></h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
-  </div>
+  <% end %>
 
   <%= simple_form_for [@list, @bookmark] do |f| %>
     <%= f.association :movie %>
