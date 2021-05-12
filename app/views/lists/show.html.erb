@@ -13,6 +13,10 @@
           </div>
           <h2 class="card-movie-rating"><%= movie.rating %></h2>
           <%= @bookmark.comment %>
+          <%= link_to 'Delete <i class="fas fa-trash"></i>'.html_safe,
+                      list_bookmark_path(list_url),
+                      method: :delete,
+                      data: { confirm: "Are you sure?"} %>
         </div>
       </div>
     <% end %>
