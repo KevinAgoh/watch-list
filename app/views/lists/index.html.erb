@@ -1,6 +1,5 @@
 <div class="container">
   <h1 class="m-3">🎦Watch List🎦</h1>
-
   <h2 class="m-3">My Lists</h2>
   <div class="row justify-content-around">
     <% @lists.each do |list| %>
@@ -11,7 +10,6 @@
       </div>
     <% end %>
   </div>
-
   <div class="button">
     <%= link_to "Create a movie list", new_list_path %>
   </div>
