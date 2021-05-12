@@ -1,16 +1,22 @@
 <div class="container">
-  <%= @list.movies.each do |movie| %>
-    <div class="card-movie m-3">
-      <%= image_tag movie.poster_url %>
-      <div class="card-movie-infos">
-        <div>
-          <h2><%= movie.title %></h2>
-          <p><%= movie.overview %></p>
+
+  <h1 class="m-3"><%= @list.name %></h1>
+
+  <div class="row">
+    <% @list.movies.each do |movie| %>
+      <div class="card-movie m-3">
+        <%= image_tag movie.poster_url %>
+        <div class="card-movie-infos">
+          <div>
+            <h2><%= movie.title %></h2>
+            <p><%= movie.overview %></p>
+          </div>
+          <h2 class="card-movie-rating"><%= movie.rating %></h2>
+          <%= @bookmark.comment %>
         </div>
-        <h2 class="card-movie-pricing"><%= movie.rating %></h2>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 
   <%= simple_form_for [@list, @bookmark] do |f| %>
     <%= f.association :movie %>
