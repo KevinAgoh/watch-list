@@ -1,13 +1,16 @@
 <div class="container">
   <h1 class="m-3">🎦Watch List🎦</h1>
 
-  <% @lists.each do |list| %>
-    <div class="cards">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <%= link_to list.name, list_path(list.id) %>
+  <h2 class="m-3">My Lists</h2>
+  <div class="row justify-content-around">
+    <% @lists.each do |list| %>
+      <div class="cards">
+        <div class="card-category">
+          <%= link_to list.name, list_path(list.id) %>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 
   <div class="button">
     <%= link_to "Create a movie list", new_list_path %>
