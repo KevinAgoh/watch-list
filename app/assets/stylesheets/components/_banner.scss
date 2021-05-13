@@ -1,0 +1,13 @@
+.banner {
+  height: 50vh;
+  background: rgb(38,70,83);
+  background: -moz-linear-gradient(0deg, rgba(38,70,83,1) 10%, rgba(42,157,143,1) 80%);
+  background: -webkit-linear-gradient(0deg, rgba(38,70,83,1) 10%, rgba(42,157,143,1) 80%);
+  background: linear-gradient(0deg, rgba(38,70,83,1) 10%, rgba(42,157,143,1) 80%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#264653",endColorstr="#2a9d8f",GradientType=1);
+  text-align: center;
+}
+
+.banner h1 {
+  line-height: 50vh;
+}
