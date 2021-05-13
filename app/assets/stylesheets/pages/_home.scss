@@ -1,1 +1,13 @@
 // Specific CSS for your home-page
+body {
+  color: $yellow;
+  background-color: $blue;
+}
+
+a {
+  color: $yellow;
+}
+
+a:hover {
+  text-decoration: none;
+}
