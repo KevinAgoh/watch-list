@@ -11,10 +11,11 @@
   color: white;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url("background_card.jpg");
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    asset-url("background_card.jpg");
 }
 
 // CARDS ON THE SHOW
@@ -22,8 +23,7 @@
 .card-movie {
   overflow: auto;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 500px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   width: 500px;
 }
 
@@ -41,15 +41,26 @@
 
 .card-movie p {
   font-size: 12px;
-  opacity: .7;
+  opacity: 0.7;
   margin: 0;
 }
-
 
 .card-movie-infos {
   padding: 16px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+}
+
+.card-movie-rating {
+  justify-content: end;
+  align-items: end;
+}
+
+.card-movie-trash {
+  justify-content: start;
+  align-items: end;
+}
+
+.card-movie-lower {
+  display: flex;
+  justify-content: space-around;
 }

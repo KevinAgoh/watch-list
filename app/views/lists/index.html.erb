@@ -1,19 +1,19 @@
 <div class="banner">
-  <h1 class="ml3">🎦Keum's Watch List🎦</h1>
+  <h1 class="ml3">Keum's Watch List</h1>
 </div>
 <div class="container">
   <h2 class="m-3">My Lists</h2>
   <div class="row justify-content-around">
     <% @lists.each do |list| %>
-      <div class="cards">
+      <div class="cards py-3">
         <div class="card-category">
           <%= link_to list.name, list_path(list.id) %>
         </div>
       </div>
     <% end %>
   </div>
-  <div class="button">
-    <%= link_to "Create a movie list", new_list_path %>
+  <div class="my-3">
+    <h2><%= link_to "Add a new movie list", new_list_path %></h2>
   </div>
 </div>
 
