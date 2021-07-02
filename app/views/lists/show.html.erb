@@ -4,6 +4,7 @@
 
   <div class="row">
     <% @list.movies.each do |movie| %>
+      <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
       <div class="card-movie m-3">
         <%= image_tag movie.poster_url %>
         <div class="card-movie-overview">
@@ -12,12 +13,12 @@
         </div>
         <div class="card-movie-lower">
           <div class="card-movie-comment">
-            <%= @bookmark.comment %>
+            <%= bookmark.comment %>
           </div>
           <div>
             <h2 class="card-movie-rating"><%= movie.rating %>/10</h2>
             <%= link_to '<i class="fas fa-trash"></i>'.html_safe,
-                        list_bookmark_path(list_url),
+                        list_bookmarks_path(list_url),
                         method: :delete,
                         data: { confirm: "Are you sure?"},
                         id: "trash" %>
