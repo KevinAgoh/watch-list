@@ -8,21 +8,17 @@
       <div class="card-movie m-3">
         <%= image_tag movie.poster_url %>
         <div class="card-movie-overview">
-          <h2><%= movie.title %></h2>
-          <p><%= movie.overview %></p>
+          <h2 class="p-3"><%= movie.title %></h2>
+          <p class="p-3"><%= movie.overview %></p>
         </div>
         <div class="card-movie-lower">
-          <div class="card-movie-comment">
             <%= bookmark.comment %>
-          </div>
-          <div>
             <h2 class="card-movie-rating"><%= movie.rating %>/10</h2>
             <%= link_to '<i class="fas fa-trash"></i>'.html_safe,
-                        list_bookmarks_path(list_url),
+                        bookmark_path(bookmark),
                         method: :delete,
-                        data: { confirm: "Are you sure?"},
+                        data: { confirm: "Are you sure you want to remove #{movie.title} from your #{@list.name} list?"},
                         id: "trash" %>
-          </div>
         </div>
       </div>
     <% end %>

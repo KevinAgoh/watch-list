@@ -51,4 +51,10 @@
 
 .card-movie-lower {
   height: 10%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card-no-image {
+  border: 1px solid $yellow;
 }
