@@ -25,6 +25,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   width: 500px;
+  color: black;
 }
 
 .card-movie > img {
@@ -45,12 +46,8 @@
   margin: 0;
 }
 
-.card-movie-overview {
-  height: 30%;
-}
-
 .card-movie-lower {
-  height: 10%;
+  height: auto;
   display: flex;
   justify-content: space-evenly;
 }
