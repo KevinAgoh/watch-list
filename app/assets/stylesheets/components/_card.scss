@@ -51,6 +51,13 @@
     margin: 0;
   }
 
+  a {
+    color: $blue;
+    &:hover {
+      color: $gray;
+    }
+  }
+
   .overview {
     width: 500px;
   }
