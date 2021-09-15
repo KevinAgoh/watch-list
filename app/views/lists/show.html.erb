@@ -2,23 +2,25 @@
 
   <h1 class="m-3"><%= @list.name %></h1>
 
-  <div class="row">
+  <div class="row justify-content-center">
     <% @list.movies.each do |movie| %>
       <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
       <div class="card-movie m-3">
         <%= image_tag movie.poster_url %>
-        <div class="card-movie-overview">
-          <h2 class="pt-3"><%= movie.title %></h2>
-          <p class="p-3"><%= movie.overview %></p>
-        </div>
         <div class="card-movie-lower my-3">
-            <%= bookmark.comment %>
-            <h2 class="card-movie-rating"><%= movie.rating %>/10</h2>
-            <%= link_to 'Delete card <i class="fas fa-trash"></i>'.html_safe,
-                        bookmark_path(bookmark),
-                        method: :delete,
-                        data: { confirm: "Are you sure you want to remove #{movie.title} from your #{@list.name} list?"},
-                        id: "trash" %>
+          <div class="card-movie-overview">
+            <div class="overview">
+              <h2 class="pt-3"><%= movie.title %></h2>
+              <p class="p-3"><%= movie.overview %></p>
+            </div>
+          </div>
+          <h3><%= bookmark.comment %></h3>
+          <h2 class="card-movie-rating"><%= movie.rating %>/10</h2>
+          <%= link_to 'Delete card <i class="fas fa-trash"></i>'.html_safe,
+                      bookmark_path(bookmark),
+                      method: :delete,
+                      data: { confirm: "Are you sure you want to remove #{movie.title} from your #{@list.name} list?"},
+                      id: "trash" %>
         </div>
       </div>
     <% end %>
