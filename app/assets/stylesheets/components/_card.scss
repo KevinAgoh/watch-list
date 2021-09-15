@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: $blue;
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
@@ -26,7 +26,7 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   width: 500px;
   height: 400px;
-  color: black;
+  color: $blue;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,7 +48,6 @@
   }
 
   p {
-    opacity: 0.7;
     margin: 0;
   }
 
@@ -56,20 +55,24 @@
     width: 500px;
   }
 
+  #trash {
+    text-align: center;
+  }
+
   &:hover {
-    background-color: white;
+    background-color: $yellow;
     img {
       opacity: 0.2;
       z-index: 0;
     }
   }
-}
 
-.card-movie-lower {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  position: absolute;
-  width: auto;
-  height: auto;
+  .card-movie-lower {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: absolute;
+    width: auto;
+    height: auto;
+  }
 }
