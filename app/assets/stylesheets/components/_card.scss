@@ -74,12 +74,12 @@
     }
   }
 
-  .card-movie-lower {
+  .card-movie-hover {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     position: absolute;
-    width: auto;
+    width: 500px;
     height: auto;
   }
 }
