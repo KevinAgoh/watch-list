@@ -1,0 +1,7 @@
+.btn-yellow {
+  background-color: $yellow;
+  border-radius: 5px;
+  &:hover {
+    background-color: #f4a261;
+  }
+}

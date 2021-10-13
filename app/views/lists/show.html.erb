@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h1 class="m-3"><%= @list.name %></h1>
+  <h1 class="m-3"><%= @list.name %> Movies</h1>
 
   <div class="row justify-content-center">
     <% @list.movies.each do |movie| %>
@@ -26,27 +26,33 @@
     <div class="bookmark">
       <%= f.association :movie, prompt: 'Select a movie', input_html: { class: 'select2' } %>
       <%= f.input :comment, placeholder: 'Enter a comment about the movie' %>
-      <%= f.submit class: 'btn btn-flat' %>
+      <%= f.submit class: 'btn btn-yellow' %>
     </div>
   <% end %>
 
-  <%= simple_form_for [@list, @review] do |f| %>
-    <div class="my-3">
-      <h2>Write a review of the movie list</h2>
-      <%= f.input :content, label: "What you think about this movie list ?" %>
-      <%= f.input :rating, collection: 1..5, as: :radio_buttons %>
-      <%= f.button :submit %>
-    </div>
-  <% end %>
-
-  <% @list.reviews.each do |review| %>
-    <div class="review">
-      <% review.rating.times do %>
-        <i class="far fa-star"></i>
+  <div class="row">
+    <div class="col-6">
+      <%= simple_form_for [@list, @review] do |f| %>
+        <div class="my-3">
+          <h2>Write a review of the movie list</h2>
+          <%= f.input :content, label: "What you think about this movie list ?" %>
+          <%= f.input :rating, as: :select, collection: 1..5, required: true, prompt: "What is your rating?" %>
+          <%= f.button :submit, class: "btn-yellow" %>
+        </div>
       <% end %>
-      <p><%= review.content %></p>
     </div>
-  <% end %>
+    <div class="col-6">
+      <h2>Reviews</h2>
+      <% @list.reviews.each do |review| %>
+        <div class="review">
+          <% review.rating.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+          <p><%= review.content %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
   <div class="m-3"><%= link_to 'Back to home page', lists_path %></div>
 </div>
