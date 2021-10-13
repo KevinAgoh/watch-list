@@ -1,10 +1,10 @@
 class ReviewsController < ApplicationController
   def create
-    @list = List.find(params[:cocktail_id])
+    @list = List.find(params[:list_id])
     @review = Review.new(review_params)
     @review.list = @list
 
-    if review.save
+    if @review.save
       redirect_to list_path(@list)
     else
       render 'list/show'
