@@ -1,4 +1,9 @@
 // CARDS ON THE INDEX
+@mixin mobile {
+  @media (max-width: 532px) {
+    @content;
+  }
+}
 
 .card-category {
   background-size: cover;
@@ -31,6 +36,11 @@
   align-items: center;
   justify-content: center;
 
+  @include mobile {
+    width: auto;
+    height: 200px;
+  }
+
   img {
     height: 100%;
     width: 100%;
@@ -41,14 +51,26 @@
   h2 {
     font-weight: bold;
     margin: 0;
+
+    @include mobile {
+      font-size: 10px;
+    }
   }
 
   h3 {
     text-align: center;
+
+    @include mobile {
+      font-size: 10px;
+    }
   }
 
   p {
     margin: 0;
+
+    @include mobile {
+      font-size: 10px;
+    }
   }
 
   a {
