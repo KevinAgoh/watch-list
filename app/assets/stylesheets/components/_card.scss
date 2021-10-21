@@ -27,8 +27,6 @@
 
 .card-movie {
   overflow: auto;
-  background: white;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   width: 500px;
   height: 400px;
   color: $blue;
@@ -37,8 +35,7 @@
   justify-content: center;
 
   @include mobile {
-    width: auto;
-    height: 200px;
+    width: 95%;
   }
 
   img {
@@ -46,6 +43,7 @@
     width: 100%;
     object-fit: cover;
     z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
   h2 {
@@ -59,23 +57,29 @@
 
   h3 {
     text-align: center;
+    font-weight: bold;
 
     @include mobile {
-      font-size: 10px;
+      font-size: 15px;
     }
   }
 
   p {
     margin: 0;
+    text-align: center;
+    font-style: italic;
 
     @include mobile {
-      font-size: 8px;
-      word-wrap: break-word;
+      font-size: 10px;
+      white-space: pre-wrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 
   a {
     color: $blue;
+    margin-top: 5px;
     &:hover {
       color: $gray;
     }
@@ -107,7 +111,6 @@
     flex-direction: column;
     justify-content: space-evenly;
     position: absolute;
-    width: 500px;
     height: auto;
   }
 }

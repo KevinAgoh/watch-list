@@ -5,13 +5,13 @@
   <div class="row justify-content-center">
     <% @list.movies.each do |movie| %>
       <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
-      <div class="card-movie m-3">
-        <%= image_tag movie.poster_url %>
-        <div class="card-movie-hover my-3">
-          <h2 class="pt-3"><%= movie.title %></h2>
-          <p class="p-3"><%= movie.overview %></p>
+      <div class="card-movie my-3 col-sm-12 col-md-6 no-gutter">
+        <%= image_tag movie.poster_url%>
+        <div class="card-movie-hover">
+          <h2><%= movie.title %></h2>
+          <p><%= movie.overview %></p>
           <h3><%= bookmark.comment %></h3>
-          <h2 class="card-movie-rating"><%= movie.rating %>/10</h2>
+          <h2 class="card-movie-rating pb-3"><%= movie.rating %>/10</h2>
           <%= link_to 'Delete card <i class="fas fa-trash"></i>'.html_safe,
                       bookmark_path(bookmark),
                       method: :delete,
@@ -26,7 +26,7 @@
     <div class="bookmark">
       <%= f.association :movie, prompt: 'Select a movie', input_html: { class: 'select2' } %>
       <%= f.input :comment, placeholder: 'Enter a comment about the movie' %>
-      <%= f.submit class: 'btn btn-yellow' %>
+      <%= f.button :submit, "Add Movie", class: 'btn btn-yellow' %>
     </div>
   <% end %>
 
@@ -34,10 +34,10 @@
     <div class="col-6">
       <%= simple_form_for [@list, @review] do |f| %>
         <div class="my-3">
-          <h2>Write a review of the movie list</h2>
-          <%= f.input :content, label: "What you think about this movie list ?" %>
+          <h2>Review time !</h2>
+          <%= f.input :content, label: "What do you think about this list of movies?" %>
           <%= f.input :rating, as: :select, collection: 1..5, required: true, prompt: "What is your rating?" %>
-          <%= f.button :submit, class: "btn-yellow" %>
+          <%= f.button :submit, "Review!", class: "btn-yellow" %>
         </div>
       <% end %>
     </div>
