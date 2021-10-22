@@ -36,7 +36,7 @@
         <div class="my-3">
           <h2>Review time !</h2>
           <%= f.input :content, label: "What do you think about this list of movies?" %>
-          <%= f.input :rating, as: :select, collection: 1..5, required: true, prompt: "What is your rating?" %>
+          <%= f.input :rating, as: :select, collection: 1..5, required: true, prompt: "What is your rating?", input_html: { id: 'review-rating' } %>
           <%= f.button :submit, "Review!", class: "btn-yellow" %>
         </div>
       <% end %>
