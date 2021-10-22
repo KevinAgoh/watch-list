@@ -24,7 +24,7 @@
 
   <%= simple_form_for [@list, @bookmark] do |f| %>
     <div class="bookmark">
-      <%= f.association :movie, prompt: 'Select a movie', input_html: { class: 'select2' } %>
+      <%= f.association :movie, prompt: 'Select a movie', collection: Movie.all.order(:title), input_html: { class: 'select2' } %>
       <%= f.input :comment, placeholder: 'Enter a comment about the movie' %>
       <%= f.button :submit, "Add Movie", class: 'btn btn-yellow' %>
     </div>

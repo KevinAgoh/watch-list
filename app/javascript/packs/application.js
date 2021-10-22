@@ -17,11 +17,14 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 import 'bootstrap';
+import 'select2/dist/css/select2.min.css';
 
 import { loadDynamicBannerText } from '../components/banner';
+import { initSelect2 } from './plugins/init_select2.js';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   // [...]
   loadDynamicBannerText();
+  initSelect2();
 });
